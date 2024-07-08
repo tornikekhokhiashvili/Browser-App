@@ -1,5 +1,6 @@
 package com.example.browserapp
 
+import android.annotation.SuppressLint
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -29,13 +30,13 @@ class MainActivity : AppCompatActivity() {
                 toolbar.title=view?.title
             }
         }
-
     }
     private fun init(){
         button=findViewById(R.id.button)
         edittext=findViewById(R.id.editText)
         webView=findViewById(R.id.webview)
     }
+    @SuppressLint("SetJavaScriptEnabled")
     private fun loadWeb(){
         webView.webViewClient=WebViewClient()
         webView.settings.javaScriptEnabled = true
